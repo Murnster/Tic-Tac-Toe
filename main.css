@@ -22,3 +22,8 @@ td {
 #gameBoard {
     margin-top: 5%;
 }
+
+#playAgain {
+    margin-top: 5%;
+    display: none;
+}
