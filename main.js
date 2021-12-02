@@ -1,13 +1,11 @@
 class game {
-    constructor(gameArray) {
-        this.gameArray = gameArray;
-    }
+    constructor() {}
 
     static board = ["", "", "", 
                     "", "", "", 
                     "", "", ""];
     
-    static status = "start";
+    // static status = "start";
 
     // Function that initiates the board when we load the page
     // Adds a click event to table cells that runs following code
@@ -24,7 +22,7 @@ class game {
             game.board[$(event.target).data('value')] = 'x';
             
             if (game.checkWin(game.board, 'x') == true) {
-                $("#header").html("YOU HAS WON THE GAME!");
+                $("#header").html("YOU HAVE WON THE GAME!");
                 $("#gameBoard").css('pointer-events', 'none');
                 $("#playAgain").show();
             } else {
@@ -38,7 +36,7 @@ class game {
     // Function for our AI.
     // Logic goes here, need to access board state and implement an algorithm
     static runAI() {
-        let cell = null
+        let cell = null;
         let openCells = [];
 
         // Checking open locations first, and will randomly pick after
